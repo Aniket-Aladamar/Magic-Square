@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #fff, #a9a9a9);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+  
+  .tutorial-slide img {
+    max-width: 100%;
+  }
+  
+  .navigation-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navigation-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .start-game-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-game-button:hover {
+    background-color: #1d9237;
+  }
+  
+  .game-section {
+    display: none;
+  }
+  
+  .game-section.show {
+    display: block;
+  }
+  
+  .timer {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .magic-square {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .magic-square input {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .magic-square input.incorrect {
+    border-color: #dc3545;
+  }
+  
+  .score {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .next-level-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .next-level-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .next-level-button:hover:not([disabled]) {
+    background-color: #0056b3;
+  }
+  
+  .check-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .check-button:hover {
+    background-color: #0056b3;
+  }
+  

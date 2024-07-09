@@ -1,0 +1,9 @@
+input {
+    width: 30px;
+    text-align: center;
+  }
+  
+  .incorrect {
+    border: 2px solid red;
+  }
+  

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Magic Square</title>
+<style>
+table {
+  border-collapse: collapse;
+  width: 500px;
+}
+td {
+  padding: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>Magic Square</h1>
+<form>
+  <table>
+    <tr>
+      <td>1</td>
+      <td><input type="text" id="a"></td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><input type="text" id="b"></td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><input type="text" id="c"></td>
+      <td>9</td>
+    </tr>
+  </table>
+  <br>
+  <button onclick="check()">Check</button>
+</form>
+<script>
+function check() {
+    event.preventDefault();
+  // Get the values of the three cells in the first row.
+  var a = document.getElementById("a").value;
+  var b = document.getElementById("b").value;
+  var c = document.getElementById("c").value;
+  // Get the values of the three cells in the second row.
+  var d = document.getElementById("d").value;
+  var e = document.getElementById("e").value;
+  var f = document.getElementById("f").value;
+  // Get the values of the three cells in the third row.
+  var g = document.getElementById("g").value;
+  var h = document.getElementById("h").value;
+  var i = document.getElementById("i").value;
+  // Check if the numbers in the magic square add up to the same value.
+  if (a + b + c == d + e +f == g + h + i) {
+    alert("Your entries are correct!");
+  } else {
+    alert("Your entries are wrong!");
+  }
+}
+</script>
+</body>
+</html>

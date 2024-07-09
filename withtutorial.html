@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>magicSquareGame</title>
+    <script src="script1.js"></script>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h2 id="username"></h2>
+    <h3 id="attempts"></h3>
+    <div id="tutorial">
+        <h1>Tutorial</h1>
+        <div id="tutorialSlides" style="max-width: 500px;">
+            <img src="tutorial 1.png" width="100%" alt="Tutorial Slide 1">
+            <img src="tutorial 2.png" width="100%" alt="Tutorial Slide 2">
+            <img src="tutorial 3.png" width="100%" alt="Tutorial Slide 3">
+            <img src="tutorial 4.png" width="100%" alt="Tutorial Slide 4">
+            <img src="tutorial 5.png" width="100%" alt="Tutorial Slide 5">
+        </div>
+        <button id="prevButton" style="display: none;">Back</button>
+        <button id="nextButton">Next</button>
+        <button id="startGameButton" >Start Game</button>
+    </div>
+    <div id="game" style="display: none;">
+        <div id="timer"></div>
+        <div id="magicSquareGame"></div>
+        <div id="score">Score: <span id="scoreValue">0</span></div>
+        <button id="nextLevelButton" disabled>Go to Next Level</button>
+    </div>
+    <script>
+        const tutorialSlides = document.getElementById('tutorialSlides');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const startGameButton = document.getElementById('startGameButton');
+        const tutorialSection = document.getElementById('tutorial');
+        const gameSection = document.getElementById('game');
+
+        let currentSlide = 0;
+        const totalSlides = tutorialSlides.children.length;
+
+        prevButton.addEventListener('click', function () {
+          currentSlide--;
+          showSlide(currentSlide);
+          updateButtonVisibility();
+        });
+
+        nextButton.addEventListener('click', function () {
+          currentSlide++;
+          showSlide(currentSlide);
+          updateButtonVisibility();
+        });
+
+        startGameButton.addEventListener('click', function () {
+          tutorialSection.style.display = 'none';
+          gameSection.style.display = 'block';
+          request('http://localhost:3000/magicsquare'); // Call the request function here
+        });
+
+        window.addEventListener('load', function () {
+          showSlide(currentSlide);
+          updateButtonVisibility();
+        });
+
+        function showSlide(slideIndex) {
+          for (let i = 0; i < totalSlides; i++) {
+            tutorialSlides.children[i].style.display = i === slideIndex ? 'block' : 'none';
+          }
+        }
+
+        function updateButtonVisibility() {
+          prevButton.style.display = currentSlide > 0 ? 'block' : 'none';
+          nextButton.style.display = currentSlide < totalSlides - 1 ? 'block' : 'none';
+          // startGameButton.style.display = currentSlide === totalSlides - 1 ? 'block' : 'none';
+        }
+
+    </script>
+</body>
+</html>

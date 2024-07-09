@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Square Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2 id="username"></h2>
+    <h3 id="attempts"></h3>
+    <div id="tutorial" class="tutorial-section">
+      <h1>Tutorial</h1>
+      <div id="tutorialSlides" class="tutorial-slides">
+        <div class="tutorial-slide">
+          <img src="tutorial-1.png" alt="Tutorial Slide 1">
+        </div>
+        <div class="tutorial-slide">
+          <img src="tutorial-2.png" alt="Tutorial Slide 2">
+        </div>
+        <div class="tutorial-slide">
+          <img src="tutorial-3.png" alt="Tutorial Slide 3">
+        </div>
+        <div class="tutorial-slide">
+          <img src="tutorial-4.png" alt="Tutorial Slide 4">
+        </div>
+        <div class="tutorial-slide">
+          <img src="tutorial-5.png" alt="Tutorial Slide 5">
+        </div>
+      </div>
+      <button id="prevButton" class="navigation-button" style="display: none;">Back</button>
+      <button id="nextButton" class="navigation-button">Next</button>
+      <button id="startGameButton" class="start-game-button">Start Game</button>
+    </div>
+    <div id="game" class="game-section">
+      <div id="timer" class="timer"></div>
+      <div class="magic-square">
+        <div id="magicSquareGame"></div>
+      </div>
+      <div id="score" class="score">Score: <span id="scoreValue">0</span></div>
+      <button id="nextLevelButton" class="next-level-button" disabled>Go to Next Level</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

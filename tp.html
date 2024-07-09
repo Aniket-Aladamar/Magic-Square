@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* CSS for animated transitions */
+      .section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f1f1f1;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+      }
+      
+      .section.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section active">
+      <h1>Section 1</h1>
+      <p>Welcome to Section 1 of my immersive website!</p>
+    </div>
+    
+    <div class="section">
+      <h1>Section 2</h1>
+      <p>Here's another immersive section of the website.</p>
+    </div>
+    
+    <!-- Add more sections as needed -->
+    
+    <script>
+      // JavaScript to toggle active class on scroll
+      window.addEventListener('scroll', function() {
+        var sections = document.querySelectorAll('.section');
+        
+        sections.forEach(function(section) {
+          var position = section.getBoundingClientRect();
+          if (position.top >= 0 && position.bottom <= window.innerHeight) {
+            section.classList.add('active');
+          } else {
+            section.classList.remove('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
